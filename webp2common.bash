@@ -4,7 +4,6 @@ if ! magick -version; then loc="${HOME}/"; else loc=""; fi
 echo "take note of your ImageMagick version..."
 ${loc}magick -version
 animformat="gif"
-animformat2=""
 magickversion=$(${loc}magick -version | head -1 | cut -d' ' -f3 | sed 's/\.//g' | sed 's/-/\./g')
 echo "$magickversion"
 if [[ $magickversion>=7110.20 ]] && which ffmpeg; then 
@@ -12,7 +11,7 @@ if [[ $magickversion>=7110.20 ]] && which ffmpeg; then
  echo "ffmpeg is installed"
  echo "use animated png instead of gif? y/n"
  read apngpref
- [[ "$apngpref" = "y" ]] && animformat="png" && animformat2="apng:"
+ [[ "$apngpref" = "y" ]] && animformat="apng"
 else
  echo "detected version is less than 7.1.10-20 *or* ffmpeg is not installed; Please create an issue at Thysbelon/webp2common on GitHub if your actual ImageMagick version is greater or equal."
 fi
@@ -20,7 +19,7 @@ for i in *.webp; do
  echo "$i"
  if ${loc}magick identify "$i" | grep "webp\["; then
   echo "animated webp"
-  ${loc}magick "$i" "${animformat2}${i%.*}.${animformat}"
+  ${loc}magick "$i" "${i%.*}.${animformat}"
  else
   echo "not an animated webp"
   ${loc}magick "$i" "${i%.*}.png"
