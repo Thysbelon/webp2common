@@ -2,7 +2,6 @@
 WHERE magick
 if errorlevel 1 echo Please install ImageMagick & pause>nul & exit
 set animformat=gif
-set animformat2=
 :: If you have ImageMagick version 7.1.10-20 or above, you may uncomment the lines below. As of 11/27/2022, the latest windows binary release is 7.1.0, so unless you compiled from source you shouldn't uncomment the lines. The lines are commented out because versions below 7.1.10-20 will incorrectly and randomly speed up or slow down animations converted to apng.
 ::WHERE ffmpeg
 ::if errorlevel 1 echo If you have ffmpeg, please put it in the system path.
@@ -10,8 +9,7 @@ set animformat2=
 ::goto option-%errorlevel%
 :::option-1
 ::echo animated png selected
-::set animformat="png"
-::set animformat2="apng:"
+::set animformat="apng"
 ::goto continue
 :::option-2
 ::echo gif selected
@@ -24,7 +22,7 @@ FOR %%i IN (*.webp) DO (
 		magick "%%~nxi" "%%~ni.png"
 	) ELSE (
 		echo animated webp
-		magick "%%~nxi" "%animformat2%%%~ni.%animformat%"
+		magick "%%~nxi" "%%~ni.%animformat%"
 	)
 )
 choice /m "Delete all webp"
