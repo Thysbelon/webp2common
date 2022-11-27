@@ -6,3 +6,5 @@ Windows users should use the .bat file. Everyone else should use the .bash file.
 To download, click on the appropriate webp2common script, right-click "raw", then click "Save link as..."
 
 On mobile: tap and hold "view raw", then tap "Download link"
+
+In a Termux terminal, run the bash script by typing "bash webp2common.bash"
