@@ -1,5 +1,4 @@
 #!/usr/bin/bash
-echo "if you are using the ImageMagick AppImage and it is not in the system path, please place it in your home directory."
 if ! which magick; then loc="${HOME}/"; else loc=""; fi
 if ! which ${loc}magick; then read -p "ImageMagick could not be found. Please install ImageMagick using your package manager or download the ImageMagick AppImage from their website. If you have already downloaded the AppImage, please either add it to your PATH variable or place it in the home directory." && exit 1; fi
 echo "take note of your ImageMagick version..."
