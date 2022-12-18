@@ -3,7 +3,7 @@ An ImageMagick batch/bash script that detects if a webp is animated or static an
 
 Windows users should use the .bat file. Everyone else should use the .bash file.
 
-To download, click on the appropriate webp2common script, right-click "raw", then click "Save link as..."
+To download, click on the appropriate webp2common script, hold down `alt` and click "raw". On Firefox, this shortcut has to be enabled by navigating to `about:config` in the address bar at the top, then search for browser.altClickSave and click the arrows ⮂ button to set it to `true`.
 
 On mobile: tap and hold "view raw", then tap "Download link"
 
