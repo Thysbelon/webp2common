@@ -1,4 +1,11 @@
 # webp2common
+
+## Notice
+
+Thank you to everyone who used this shell script; I was inspired to create a [webapp for converting webp and svg to png and gif](https://github.com/Thysbelon/WebpSvg2common). I hope it will be useful.
+
+---
+
 An ImageMagick batch/bash script that detects if a webp is animated or static and converts it to gif or png.
 
 Windows users should use the .bat file. Everyone else should use the .bash file.
